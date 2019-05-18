@@ -19,4 +19,4 @@ RUN dnf install --setopt=install_weak_deps=False --refresh --best -y curl && \
 	rm sdk-tools.zip && \
 	yes | $ANDROID_SDK_ROOT/tools/bin/sdkmanager --licenses && \
 	yes | $ANDROID_SDK_ROOT/tools/bin/sdkmanager "platform-tools" "platforms;android-28" "build-tools;28.0.3" && \
-	dnf clean all -y &&
+	dnf clean all -y
