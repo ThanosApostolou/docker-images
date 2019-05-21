@@ -10,7 +10,7 @@ RUN dnf install --setopt=install_weak_deps=False --refresh --best -y curl && \
 		make \
 		java-1.8.0-openjdk-devel \
 		nodejs \
-		wine.i686 \
+		wine-core.i686 \
 		gradle \
 		unzip && \
 	mkdir -p $ANDROID_SDK_ROOT && cd $ANDROID_SDK_ROOT && \
