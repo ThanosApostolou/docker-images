@@ -1,19 +1,20 @@
 # docker-images
-My images for docker hub
 
-## login
+My images for Docker Hub.
+
+## Build and push
+
+Run these commands from the repository root, where `docker-compose.yml` and `.env` are located.
+
+Log in to Docker Hub if needed:
+
 ```sh
 docker login docker.io
 ```
 
-## nginx
+Build and push all images defined in `docker-compose.yml`, including their configured tags:
 
 ```sh
-cd nginx
-docker build \
-  -t docker.io/thanosapostolou/nginx:1.31.0 \
-  -t docker.io/thanosapostolou/nginx:latest \
-  .
-docker push docker.io/thanosapostolou/nginx:1.31.0
-docker push docker.io/thanosapostolou/nginx:latest
+docker compose build --pull
+docker compose push
 ```

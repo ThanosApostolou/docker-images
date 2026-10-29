@@ -1,0 +1,20 @@
+services:
+  nginx:
+    image: docker.io/thanosapostolou/nginx:${NGINX_TAG}
+    build:
+      context: ./nginx
+      args:
+        NGINX_TAG: ${NGINX_TAG}
+      tags:
+        - docker.io/thanosapostolou/nginx:latest
+        - docker.io/thanosapostolou/nginx:${NGINX_TAG_MAJOR}
+
+  builder-jdk:
+    image: docker.io/thanosapostolou/builder-jdk:${BUILDER_JDK_TAG}
+    build:
+      context: ./builder-jdk
+      args:
+        BUILDER_JDK_TAG: ${BUILDER_JDK_TAG}
+      tags:
+        - docker.io/thanosapostolou/builder-jdk:latest
+        - docker.io/thanosapostolou/builder-jdk:${BUILDER_JDK_TAG_MAJOR}
