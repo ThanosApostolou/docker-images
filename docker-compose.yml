@@ -29,3 +29,13 @@ services:
         - docker.io/thanosapostolou/builder-node:latest
         - docker.io/thanosapostolou/builder-node:${BUILDER_NODE_TAG_MAJOR}
         - docker.io/thanosapostolou/builder-node:${BUILDER_NODE_TAG_MINOR}
+
+  builder-rust:
+    image: docker.io/thanosapostolou/builder-rust:${BUILDER_RUST_TAG}
+    build:
+      context: ./builder-rust
+      args:
+        BUILDER_RUST_TAG: ${BUILDER_RUST_TAG}
+      tags:
+        - docker.io/thanosapostolou/builder-rust:latest
+        - docker.io/thanosapostolou/builder-rust:${BUILDER_RUST_TAG_MAJOR}
